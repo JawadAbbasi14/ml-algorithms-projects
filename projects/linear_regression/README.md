@@ -1,4 +1,4 @@
-# ✅ Linear Regression — Done
+# ✅ Linear Regression
 
 This folder contains the full implementation of **Linear Regression** as part of the [Ultimate Algorithm Blueprint](https://jawadabbasi14.github.io/the-ultimate-algorithm-blueprint/). It includes a basic example of predicting outcomes using a linear relationship and visualizing the best-fit line.
 
