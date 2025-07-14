@@ -1,5 +1,4 @@
-
-# 🚧 Logistic Regression — In Progress
+# ✅ Logistic Regression — Done
 
 This folder contains the complete implementation of **Logistic Regression** as part of the [Ultimate Algorithm Blueprint](https://jawadabbasi14.github.io/the-ultimate-algorithm-blueprint/). It includes data preparation, model training, and a clear probability plot to visualize the logistic function in action.
 
@@ -38,12 +37,10 @@ This is a submodule of the main project:
 
 ## 📈 Status
 
-> **Current Stage:** 🚧 _In Progress_  
-More improvements and notebook-style explanations coming soon.
+> **Current Stage:** ✅ _Done_
 
 ---
 
 ## 🧠 Author Note
 
 This implementation follows a deep understanding–first approach, where each line of code is manually tested, plotted, and explained. Ideal for learners aiming for **core clarity**.
-
