@@ -1,4 +1,4 @@
-# ✅ Logistic Regression — Done
+# ✅ Logistic Regression 
 
 This folder contains the complete implementation of **Logistic Regression** as part of the [Ultimate Algorithm Blueprint](https://jawadabbasi14.github.io/the-ultimate-algorithm-blueprint/). It includes data preparation, model training, and a clear probability plot to visualize the logistic function in action.
 
