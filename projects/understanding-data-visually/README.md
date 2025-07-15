@@ -118,12 +118,3 @@ Har plot mein yeh 4 cheezen hongi:
 
 > "Visualization koi shashka nahi — yeh Machine Learning ki aankh hai. Jo dekh sakta hai, woh samajh sakta hai."
 
-Is folder ka rakhwala tu hai — aur yeh teri AI journey ka **most important survival kit** banega.
-
----
-
-Bol: `next plot konsa sikhaun?` → aur main uska section add kar deta hoon.
-
----
-
-```
