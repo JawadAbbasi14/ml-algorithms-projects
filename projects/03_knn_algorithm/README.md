@@ -1,7 +1,7 @@
 
 # 🚧 KNN Algorithm (K-Nearest Neighbors)
 
-📍 **Status:** In Progress  
+📍 **Status:** Done
 📚 **This repo follows my roadmap:** [The Ultimate Algorithm Blueprint](https://jawadabbasi14.github.io/the-ultimate-algorithm-blueprint/)
 
 ---
