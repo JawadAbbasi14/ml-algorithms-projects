@@ -77,8 +77,18 @@ Yeh folder **3 Phase** mein tujhko plotting master banayega:
 
 Har plot ka section is tarah hoga:
 
-````
-### 📌 Plot: Scatter Plot (Basic)
+```
+### 📌 Plot: [Plot Name]
+
+🧩 Use-case:
+🧠 Interpretation:
+📜 Code:
+🎯 Kab use hota hai:
+```
+
+---
+
+## 📌 Plot 1: Scatter Plot (Basic)
 
 🧩 Use-case:
 2 numeric features ka relation dekhna (e.g. Math vs CS)
@@ -87,20 +97,65 @@ Har plot ka section is tarah hoga:
 Dots jitne close → relation strong, spread → weak ya no relation
 
 📜 Code:
+
 ```python
-plt.scatter(data['Math'], data['CS'])
+import matplotlib.pyplot as plt
+
+# Sample data
+data = {
+    "Math": [60, 70, 85, 90, 55, 65, 78],
+    "CS": [65, 75, 88, 93, 50, 67, 80]
+}
+
+plt.scatter(data['Math'], data['CS'], color='blue', marker='o')
 plt.xlabel('Math Marks')
 plt.ylabel('CS Marks')
 plt.title('Math vs CS')
+plt.grid(True)
 plt.show()
-````
-
 ```
-Har plot mein yeh 4 cheezen hongi:
-- **Use-case**
-- **Samajhne ka tareeqa (interpretation)**
-- **Code**
-- **(Optional) Styling tips**
+
+🎯 Kab use hota hai:
+
+* Jab tu 2 number-type features ke beech ka connection dekhna chahta ho
+* Model training se pehle data ko samajhne ke liye
+
+---
+
+## 📌 Plot 2: Line Plot (Regression Fit)
+
+🧩 Use-case:
+Ek independent variable ke sath dependent variable ka linear relation dekhna
+
+🧠 Interpretation:
+
+* Line jitni straight aur close to points ho → model utna strong hai
+* Points agar scatter hoon to weak relation
+
+📜 Code:
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.array([1, 2, 3, 4, 5])
+y = np.array([2, 4, 6, 8, 10])
+
+# Fit line
+a, b = np.polyfit(x, y, 1)  # slope, intercept
+plt.scatter(x, y, color='blue')
+plt.plot(x, a*x + b, color='red')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.title('Line Plot with Fit')
+plt.grid(True)
+plt.show()
+```
+
+🎯 Kab use hota hai:
+
+* Linear Regression models
+* Trend analysis karne ke liye
 
 ---
 
@@ -108,7 +163,7 @@ Har plot mein yeh 4 cheezen hongi:
 
 1. Jab bhi tu koi model banaye
 2. Uske features ya output ko visualize kar
-3. Is folder ka related plot section kholo, aur wahi use kar
+3. Is file ka related plot section kholo, aur wahi use kar
 
 🔁 Har algorithm ke saath is file ko grow karte rehna hai
 
@@ -117,4 +172,5 @@ Har plot mein yeh 4 cheezen hongi:
 ## 📌 Aakhri Baat:
 
 > "Visualization koi shashka nahi — yeh Machine Learning ki aankh hai. Jo dekh sakta hai, woh samajh sakta hai."
+
 
