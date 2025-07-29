@@ -1,82 +1,76 @@
-Decision Tree Implementation
+Decision Tree Implementation for mjstore
 Overview
-This project provides a Python implementation of a Decision Tree algorithm for classification tasks. It includes functionality for training, testing, and visualizing decision trees, suitable for both educational purposes and practical machine learning applications.
+Yeh project ek Python-based Decision Tree Classifier hai jo mjstore ke liye banaya gaya hai, jo ek CLI-based eCommerce store hai (Django + PostgreSQL + Python + React). Yeh algorithm customer data ko classify karta hai, jaise ke kaun VIP customer hai ya kon sa product recommend karna hai. Perfect hai learning ke liye aur real-world ML applications ke liye!
 Features
 
-Custom Decision Tree Classifier: Implements a decision tree from scratch with support for Gini impurity and Information Gain splitting criteria.
-Visualization: Generates visual representations of the decision tree using Graphviz.
-Preprocessing: Includes utilities for data preprocessing, such as handling missing values and encoding categorical variables.
-Evaluation: Provides metrics like accuracy, precision, recall, and F1-score for model evaluation.
-Sample Dataset: Includes a sample dataset for quick testing and experimentation.
+Custom Decision Tree Classifier: Scratch se bana hai, Gini impurity ya Information Gain ke saath nodes split karta hai.
+Visualization: Graphviz ke saath tree ka visual banata hai, mjstore ke theme colors (#5b67f3, #f0f0f0, #ff6b6b) ke saath customizable.
+Preprocessing: Data ko clean karta hai (missing values, categorical encoding).
+Evaluation: Accuracy, precision, recall, aur F1-score jaise metrics deta hai.
+mjstore Integration: PostgreSQL se customer data (age, purchase_history, cart_value) pull karta hai.
 
 Prerequisites
-To run this project, ensure you have the following installed:
+Project chalane ke liye yeh chahiye:
 
-Python 3.8 or higher
-Required Python libraries:
+Python 3.8 ya higher
+Libraries:
 numpy
 pandas
-scikit-learn (for comparison and preprocessing)
-graphviz (for visualization)
-pydotplus (for rendering decision tree graphs)
+scikit-learn (preprocessing aur comparison ke liye)
+graphviz (visualization ke liye)
+pydotplus (tree graphs render karne ke liye)
+psycopg2 (PostgreSQL ke liye)
 
 
 
-Install dependencies using:
+Dependencies install karo:
 pip install -r requirements.txt
 
 Installation
 
-Clone the repository:
-git clone https://github.com/your-username/decision-tree.git
-cd decision-tree
+Repository clone karo:
+
+git clone https://github.com/your-username/mjstore-decision-tree.git
+cd mjstore-decision-tree
 
 
-Install the required dependencies:
+Dependencies install karo:
+
 pip install -r requirements.txt
 
 
-(Optional) Install Graphviz for visualization:
+(Optional) Visualization ke liye Graphviz install karo:
 
-On Windows: Download and install from Graphviz website.
-On macOS: brew install graphviz
-On Linux: sudo apt-get install graphviz
+Windows: Graphviz website se download aur install karo.
+macOS: brew install graphviz
+Linux: sudo apt-get install graphviz
 
+
+PostgreSQL Setup: mjstore ka database configure karo (dbname, user, password) main.py mein.
 
 
 Usage
+Data Tayaar Karo:
 
-Prepare Your Data:
+mjstore ke PostgreSQL database se customer data pull karo (e.g., customers table).
+Ya phir data/ folder mein sample_dataset.csv use karo (features: age, purchase_history, cart_value; target: is_vip).
 
-Place your dataset in the data/ folder or use the provided sample_dataset.csv.
-Ensure the dataset is in CSV format with features and a target column.
-
-
-Run the Decision Tree:
-
-To train and test the decision tree, run:
+Decision Tree Chalao:
 python main.py
 
+Yeh karega:
 
-This will:
+Database ya CSV se data load karega.
+Decision tree train karega.
+Test set pe performance evaluate karega.
+Tree ka visual tree.png mein save karega (mjstore ke colors ke saath).
 
-Load the dataset.
-Train the decision tree model.
-Evaluate performance on the test set.
-Generate a visualization of the tree (saved as tree.png).
+Parameters Customize Karo:
+config.json mein yeh tweak karo:
 
-
-
-
-Customize Parameters:
-
-Modify config.json to adjust hyperparameters like:
-max_depth: Maximum depth of the tree.
-min_samples_split: Minimum samples required to split a node.
-criterion: Splitting criterion (gini or entropy).
-
-
-
+max_depth: Tree ki max depth.
+min_samples_split: Node split ke liye minimum samples.
+criterion: Splitting criterion (gini ya entropy).
 
 Example Output:
 Accuracy: 0.85
@@ -85,37 +79,40 @@ Recall: 0.87
 F1-Score: 0.84
 Tree visualization saved as tree.png
 
-
-
 Project Structure
-decision-tree/
+mjstore-decision-tree/
 │
-├── data/                    # Directory for datasets
+├── data/                    # Datasets ka folder
 │   └── sample_dataset.csv   # Sample dataset
 ├── src/                     # Source code
-│   ├── decision_tree.py     # Decision Tree implementation
-│   ├── preprocess.py        # Data preprocessing utilities
-│   ├── evaluate.py          # Evaluation metrics
-│   └── visualize.py         # Tree visualization functions
-├── main.py                  # Main script to run the project
-├── config.json              # Configuration file for hyperparameters
-├── requirements.txt         # List of dependencies
-└── README.md                # This file
+│   ├── decision_tree.py     # Decision Tree ka code
+│   ├── preprocess.py        # Data cleaning utilities
+│   ├── evaluate.py          # Metrics ka code
+│   └── visualize.py         # Visualization functions
+├── main.py                  # Main script
+├── config.json              # Hyperparameters
+├── requirements.txt         # Dependencies list
+└── README.md                # Yeh file
 
 Example Dataset
-The included sample_dataset.csv contains a synthetic dataset with features like age, income, and credit_score, and a binary target variable approved. You can replace it with your own dataset, ensuring it follows a similar structure.
+sample_dataset.csv ek synthetic dataset hai jisme features hain jaise age, purchase_history, cart_value, aur target variable is_vip. Apna dataset use karna chahte ho toh same structure rakho.
 Visualization
-The decision tree is visualized as a PNG file (tree.png) using Graphviz. To view the tree, ensure Graphviz is installed and added to your system PATH.
-Contributing
-Contributions are welcome! Please follow these steps:
+Tree ka visual tree.png mein save hota hai, Graphviz ke saath. Colors mjstore ke theme (#5b67f3, #f0f0f0, #ff6b6b) ke hisaab se customize karo. Graphviz ko PATH mein add karna zaroori hai.
+Real-World Use Case
 
-Fork the repository.
-Create a new branch (git checkout -b feature-branch).
-Make your changes and commit (git commit -m 'Add new feature').
-Push to the branch (git push origin feature-branch).
-Create a pull request.
+eCommerce (mjstore): Customer segmentation (VIP vs regular), product recommendation, ya churn prediction.
+Freelancing Benefit: Decision trees explainable hain, jo clients ko pasand aata hai. Is se customer analytics ke projects banaye ja sakte hain jo $100-$500 ke gigs ban sakte hain (e.g., Fiverr pe ML-based analytics).
+
+Contributing
+Contributions ka swagat hai!
+
+Repo fork karo.
+Nayi branch banao: git checkout -b feature-branch
+Changes karo aur commit: git commit -m 'Add new feature'
+Branch push karo: git push origin feature-branch
+Pull request banao.
 
 License
-This project is licensed under the MIT License. See the LICENSE file for details.
+MIT License ke under hai. Details ke liye LICENSE file dekho.
 Contact
-For questions or suggestions, please open an issue or contact [jawadabbasi1107@gmail.com].
+Koi sawal ya suggestion? Issue kholo ya email karo: [jawadabbasi1107@gmail.com].
